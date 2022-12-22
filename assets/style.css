@@ -30,3 +30,28 @@ h4 {
     font-size: 15px;
     color:black;
 }
+
+button {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    padding: 10px 15px;
+    margin: 10px 0;
+    position: relative;
+    left: 230px;
+    width: 150px;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color:rgb(198, 43, 226);
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: cyan;
+    border: 2px solid;
+    color: black;
+}
