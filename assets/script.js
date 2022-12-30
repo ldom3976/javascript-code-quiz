@@ -10,7 +10,7 @@ var outTime = "You're out of time!";
 var createOp = document.createElement("ul");
 
 function playQuiz(questionIndex) {
-   // createOp.innerHTML = "";
+    createOp.innerHTML = "";
     // quizEl.innerHTML = "";
 
     for (var i=0; i < questions.length; i++) {
@@ -69,8 +69,10 @@ function correctAnswer(event) {
 
         if (element.textContent == questions[questionIndex].correctAnswer) {
             totalPoints ++;
+            alert('Correct! ');
         } else {
             startTime = startTime - penalty;
+            alert('Incorrect!')
         }
     }
 
@@ -78,7 +80,7 @@ function correctAnswer(event) {
 
     if (questionIndex >= questions.length) {
         quizOver();
-        createDiv.textContent = "Game over! Your score: " + totalPoints + "answers correct.";
+        createDiv.textContent = "Good work! You got " + totalPoints + " answers correct!";
     } else {
         playQuiz(questionIndex);
     }
@@ -119,6 +121,7 @@ function quizOver() {
     var newSubmit = document.createElement("button");
         newSubmit.setAttribute("type", "submit");
         newSubmit.setAttribute("id", "Submit");
+        newSubmit.textContent = 'Submit';
     quizEl.appendChild(newSubmit);
 
     newSubmit.addEventListener("click", function () {
@@ -148,7 +151,7 @@ function quizOver() {
 function countdown() {
     timeInterval = setInterval(function() {
     if (startTime >= 1) {
-        timeInterval.textContent = "Time Left: " + startTime;
+        timeEl.textContent = "Time Left: " + startTime;
         startTime -= 1;
     }
     else if (startTime === 0) {
