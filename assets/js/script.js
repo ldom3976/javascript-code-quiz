@@ -144,6 +144,8 @@ function quizOver() {
                     highScore.push(finalScore);
                     var newScore = JSON.stringify(highScore);
                     localStorage.setItem("highScore", newScore);
+
+                    window.location.replace("./highScorePage.html");
             }
     })
 }
