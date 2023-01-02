@@ -13,6 +13,11 @@ header {
     cursor: pointer;
 }
 
+#quiz {
+    font-weight: bold;
+    font-size: x-large;
+}
+
 .intro {
     margin-bottom: 20px;
     font-weight: bold;
@@ -30,6 +35,7 @@ h4 {
     font-size: 15px;
     color:black;
 }
+
 
 button {
     display: flex;
@@ -67,4 +73,31 @@ footer {
     margin: auto;
     font-size: small;
     font-weight: bold;
+}
+
+/* desktop */
+@media screen and (max-width: 980px) {
+    h1 {
+        padding-bottom: 0;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    header {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    footer {
+        text-align: center;
+        width: 100%;
+    }
+
+    /* tablet */
+    @media screen and (max-width: 768px) {
+        main {
+            padding: 30px 15px;
+        }
+    }
 }
