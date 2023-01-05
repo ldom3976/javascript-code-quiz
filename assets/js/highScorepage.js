@@ -9,6 +9,7 @@ eraseScore.addEventListener("click", function () {
     location.reload();
 });
 
+//having issues getting high scores to show up on page, will continue to debug
 var highScore = function () {
 var highScore = localStorage.getItem('highScore');
 highScore = JSON.parse(highScore);
