@@ -25,6 +25,8 @@ THEN I can save my initials and score
 
 ## Link to Deployed URL:
 
+https://ldom3976.github.io/javascript-code-quiz/
+
 ### Visual Representation:
 ![Alt text](assets/images/screenshot1.jpeg)
 ![Alt text](assets/images/screenshot2.jpeg)
