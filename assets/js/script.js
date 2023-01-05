@@ -10,9 +10,11 @@ var outTime = "You're out of time!";
 var createOp = document.createElement("ul");
 
 function playQuiz(questionIndex) {
+    //clear
     createOp.innerHTML = "";
     // quizEl.innerHTML = "";
 
+    //loop for questions
     for (var i=0; i < questions.length; i++) {
         //displays question
         var questionName = questions[questionIndex].question;
@@ -67,10 +69,11 @@ function correctAnswer(event) {
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
 
+        //if answer is correct
         if (element.textContent == questions[questionIndex].correctAnswer) {
             totalPoints ++;
             alert('Correct! ');
-        } else {
+        } else { //removes 10 seconds if incorrect
             startTime = startTime - penalty;
             alert('Incorrect!')
         }
@@ -78,6 +81,7 @@ function correctAnswer(event) {
 
     questionIndex ++;
 
+    //checks if the quiz is over
     if (questionIndex >= questions.length) {
         quizOver();
         createDiv.textContent = "Good work! You got " + totalPoints + " answers correct!";
@@ -87,10 +91,12 @@ function correctAnswer(event) {
     quizEl.appendChild(createDiv);
 }
 
+//quiz is over
 function quizOver() {
     quizEl.innerHTML = "";
     stopCountdown();
 
+    //notifies that quiz is over
     var headEl = document.createElement("h1");
     headEl.setAttribute("id", "headEl");
     headEl.textContent = "Quiz Over!";
@@ -100,6 +106,7 @@ function quizOver() {
     rule.setAttribute("id", "rule");
     quizEl.appendChild(rule);
 
+    //the time left and score
     if (startTime >= 0) {
         var timeLeft = startTime;
         var parEl = document.createElement("p");
@@ -112,6 +119,7 @@ function quizOver() {
         newLabel.textContent = "Enter your initials: ";
     quizEl.appendChild(newLabel);
 
+    //captures initials
     var newInput = document.createElement("input");
         newInput.setAttribute("id", "text");
         newInput.setAttribute("id", "initials");
@@ -124,6 +132,7 @@ function quizOver() {
         newSubmit.textContent = 'Submit';
     quizEl.appendChild(newSubmit);
 
+    //stores high score
     newSubmit.addEventListener("click", function () {
         var initials = newInput.value;
             if (!initials) {
@@ -150,6 +159,7 @@ function quizOver() {
     })
 }
 
+//timer function
 function countdown() {
     timeInterval = setInterval(function() {
     if (startTime >= 1) {
@@ -169,6 +179,7 @@ function countdown() {
     }, 1000);
 }
 
+//stops the timer function
 function stopCountdown() {
     clearInterval(timeInterval);
     timeInterval.textContent = "You're out of time!"
